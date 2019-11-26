@@ -1,12 +1,17 @@
 package com.dio.demo.springdoc.model;
 
+import com.dio.demo.springdoc.util.Views;
+import com.fasterxml.jackson.annotation.JsonView;
+
 public class User {
+
 
     private String username;
     private String password;
     private String firstName;
     private String lastName;
 
+    @JsonView(Views.Read.class)
     public String getUsername() {
         return username;
     }
@@ -15,6 +20,7 @@ public class User {
         this.username = username;
     }
 
+    @JsonView(Views.Write.class)
     public String getPassword() {
         return password;
     }
@@ -23,6 +29,7 @@ public class User {
         this.password = password;
     }
 
+    @JsonView(Views.Read.class)
     public String getFirstName() {
         return firstName;
     }
@@ -31,6 +38,7 @@ public class User {
         this.firstName = firstName;
     }
 
+    @JsonView(Views.Read.class)
     public String getLastName() {
         return lastName;
     }
